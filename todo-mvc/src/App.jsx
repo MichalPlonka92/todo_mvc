@@ -25,6 +25,10 @@ function App() {
   }
 
   function handleDelete(event) {
+      const id = parseInt(event.target.dataset.id);
+      const newTask = tasks.filter((task) => task.id !== id);
+
+      setTasks(newTask);
 
   }
 
@@ -45,6 +49,7 @@ function App() {
                     <span>{task.name}</span>
                     <button
                     onClick={handleDelete}
+                    data-id={task.id}
                     >delete
                     </button>
                 </li>
