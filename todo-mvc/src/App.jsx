@@ -66,6 +66,10 @@ function App() {
                     </li>
                 ))}
             </ul>
+            {tasks.some((task) => task.status === 'done') && (
+
+            <button>Clear completed</button>
+                )}
         </>
     );
 }
